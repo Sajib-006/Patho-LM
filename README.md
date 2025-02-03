@@ -28,6 +28,22 @@ Each header should contain:
 
 Ensure that each sequence entry follows this format to be correctly parsed by the model.
 
+## Model Weights Download
+
+The model weights are not included in this repository due to their large size. Please download the model weights from Zenodo:
+
+[Download Model Weights](https://zenodo.org/records/14791889)
+
+### Steps to Use:
+
+1. Download the model weights from the above Zenodo link.
+2. Create a directory named** **`<span>ckpt</span>` in the repository:
+   ```
+   mkdir ckpt
+   ```
+3. Move the downloaded model weight files into the** **`<span>ckpt</span>` directory.
+4. Run the evaluation script as described in the usage section.
+
 ## Usage
 
 ### Evaluate on Test Dataset
