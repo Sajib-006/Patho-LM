@@ -9,6 +9,9 @@ from utils import fasta_to_df
 
 def compute_metrics(logits, labels):
     predictions = np.argmax(logits, axis=1)
+    labels = np.array(labels, dtype=int)
+    predictions = np.array(predictions, dtype=int)
+    
     acc = accuracy_score(labels, predictions)
     f1 = f1_score(labels, predictions, average='weighted')
     mcc = matthews_corrcoef(labels, predictions)
