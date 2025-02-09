@@ -49,6 +49,11 @@ def evaluate(model_path, test_file=None, sequence=None):
         return
     
     test_df = fasta_to_df(test_file)
+    label_map = {
+        'non-pathogen': 0,
+        'pathogen': 1  
+    }
+    test_df['label'] = test_df['label'].str.lower().map(label_map)
     dataset = Dataset.from_pandas(test_df)
     dataset = dataset.map(lambda x: encode_sequence(x['sequence'], tokenizer, tokenizer.model_max_length), batched=True)
     dataset.set_format(type='torch', columns=['input_ids', 'attention_mask', 'label'])

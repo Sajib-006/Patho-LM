@@ -1,17 +1,18 @@
 # PathoLM: Identifying Pathogenicity From the DNA Sequence Through the Genome Foundation Model
+
 <div align="center">
-  
-| 🏆 Conference | 📄 Paper Link |
-|--------------|--------------|
-| **MLCB2024 (Spotlight)** | [Proceedings](https://proceedings.mlr.press/v261/) |
+
+
+| 🏆 Conference            | 📄 Paper Link                                            |
+| ------------------------ | -------------------------------------------------------- |
+| **MLCB2024 (Spotlight)** | [Proceedings](https://proceedings.mlr.press/v261/)       |
 | **ICML AI4Science 2024** | [OpenReview](https://openreview.net/forum?id=f2b7Bozk3O) |
-  
+
 </div>
-  
+
 Pathogen identification is pivotal in diagnosing, treating, and preventing diseases, crucial for controlling infections and safeguarding public health. Traditional alignment-based methods, though widely used, are computationally intense and reliant on extensive reference databases, often failing to detect novel pathogens due to their low sensitivity and specificity. Similarly, conventional machine learning techniques, while promising, require large annotated datasets and extensive feature engineering and are prone to overfitting. Addressing these challenges, we introduce PathoLM, a cutting-edge pathogen language model optimized for the identification of pathogenicity in bacterial and viral sequences. Leveraging the strengths of pre-trained DNA models such as the Nucleotide Transformer, PathoLM requires minimal data for fine-tuning, thereby enhancing pathogen detection capabilities. It effectively captures a broader genomic context, significantly improving the identification of novel and divergent pathogens. We developed a comprehensive data set comprising approximately 30 species of viruses and bacteria, including ESKAPEE pathogens, seven notably virulent bacterial strains resistant to antibiotics. Additionally, we curated a species classification dataset centered specifically on the ESKAPEE group. In comparative assessments, PathoLM dramatically outperforms existing models like DciPatho, demonstrating robust zero-shot and few-shot capabilities. Furthermore, we expanded PathoLM-Sp for ESKAPEE species classification, where it showed superior performance compared to other advanced deep learning methods, despite the complexities of the task.
 
 ![PathoLM Logo](pathoLM.png)
-
 
 ## Setup
 
@@ -62,7 +63,7 @@ The model weights are not included in this repository due to their large size. P
 ### Evaluate on Test Dataset
 
 ```
-python eval_model.py --model_path ckpt/patholm_binary_2k_mmseq40 --test_file test.fasta
+python eval_model.py --model_path ckpt/patholm_binary_2k_mmseq40 --test_file data/test.fasta
 ```
 
 ### Evaluate Single Sequence
